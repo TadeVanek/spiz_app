@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "723652580239",
+    "project_id": "spiz-app",
+    "storage_bucket": "spiz-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723652580239:android:f7ff591801a60b2d45b1fa",
+        "android_client_info": {
+          "package_name": "com.example.spiz_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaNQOag9UBUzhXsKSsLFyyYEVAFcuI8J8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
