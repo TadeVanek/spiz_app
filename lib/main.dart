@@ -3,8 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
-import 'screens/home_screen.dart';
+import 'screens/household_gate.dart';
 import 'screens/login_screen.dart';
+import 'theme.dart';
 
 Future<void> main() async {
   // Nutné před jakýmkoliv použitím pluginů (Firebase) před runApp
@@ -21,7 +22,7 @@ class SpizApp extends StatelessWidget {
     return MaterialApp(
       title: 'Spíž',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorSchemeSeed: Colors.green, useMaterial3: true),
+      theme: buildTheme(),
       // StreamBuilder poslouchá stav přihlášení a sám přepíná obrazovky
       home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
@@ -31,7 +32,7 @@ class SpizApp extends StatelessWidget {
               body: Center(child: CircularProgressIndicator()),
             );
           }
-          if (snapshot.hasData) return const HomeScreen();
+          if (snapshot.hasData) return const HouseholdGate();
           return const LoginScreen();
         },
       ),
