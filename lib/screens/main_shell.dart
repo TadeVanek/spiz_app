@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'home_screen.dart';
 import 'pantry_screen.dart';
+import 'settings_screen.dart';
+import 'shopping_screen.dart';
 
 class MainShell extends StatefulWidget {
   final String householdId;
@@ -17,14 +18,12 @@ class _MainShellState extends State<MainShell> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // IndexedStack drží všechny záložky "naživu", takže se neztratí filtry
       body: IndexedStack(
         index: _index,
         children: [
           PantryScreen(householdId: widget.householdId),
-          const Center(child: Text('Nákupní seznam – přidáme příště')),
-          // Dočasně: stávající obrazovka s kódem domácnosti jako "Nastavení"
-          HomeScreen(householdId: widget.householdId),
+          ShoppingScreen(householdId: widget.householdId),
+          SettingsScreen(householdId: widget.householdId),
         ],
       ),
       bottomNavigationBar: NavigationBar(

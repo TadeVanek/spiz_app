@@ -54,7 +54,7 @@ class _AddItemScreenState extends State<AddItemScreen> {
       expiration: _expiration,
       category: _category,
     );
-    Navigator.pop(context);
+    Navigator.pop(context, true);
   }
 
   InputDecoration _decoration(String label, {Widget? suffix}) =>

@@ -31,6 +31,13 @@ class HouseholdService {
     return _db.collection('households').doc(id).snapshots();
   }
 
+  Stream<QuerySnapshot<Map<String, dynamic>>> membersStream(List<String> uids) {
+    return _db
+        .collection('users')
+        .where(FieldPath.documentId, whereIn: uids)
+        .snapshots();
+  }
+
   Future<String> _generateUniqueCode() async {
     final rnd = Random.secure();
     while (true) {
